@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamWriter p = new StreamWriter((@"C:\Users\Sasha\Desktop\ans.txt"));
+            float a, x, y;
+            p.WriteLine(" РЕЗУЛЬТАТИ РОЗРАХУНКУ");
+            for (a = 1; a <= 4; a += 1)  
+            {
+                
+                p.WriteLine(" a=" + a);
+                for (x = -4; x <= 4; x += 0.2f) 
+                {
+                    
+                    y = (float)((Math.Pow((x + a), 2.0 / 3) - Math.Pow((x - a), 2.0 / 3)) / a);
+                    p.WriteLine(" x= " + x + '\t' + " y= " + y);
+                    
+                }
+                
+            }
+            p.Close();
+
+        }
+    }
+}
